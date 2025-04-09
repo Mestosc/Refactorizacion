@@ -284,3 +284,9 @@ Podemos seleccionar diferentes elementos para mostrar su menú de refactorizaci�
 
 ----
 <sub>[(*artículo original*)](https://entornos.abrilcode.com/doku.php?id=apuntes:refactorizacion)</sub>
+
+---
+
+# Cambios realizados
+Los cambios realizados son extraer funciones getScoreEmpate estanEmpatados, obtainDifferences, isAdvantage.
+Tambien elimino un bucle for que no es necesario y agrupo en metodos diversas funcionalidades, además añado 

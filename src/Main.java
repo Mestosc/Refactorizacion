@@ -4,7 +4,6 @@ public class Main {
      */
     public static String getScore(int m_score1, int m_score2) {
         String score = "";
-        int tempScore=m_score1;
         if (estanEmpatados(m_score1, m_score2)) {
             return obtenerPuntuacionSiEmpate(m_score1);
         }
@@ -12,12 +11,16 @@ public class Main {
             return obtainDifference(m_score1, m_score2);
         }
         else {
-            score = getScoreEmpate(tempScore, score);
-            score+="-";
-            tempScore = m_score2;
-            score = getScoreEmpate(tempScore, score);
-            return score;
+            return obtenerPuntuacionNoVentajaEmpate(m_score2, score, m_score1);
         }
+    }
+
+    private static String obtenerPuntuacionNoVentajaEmpate(int m_score2, String score, int tempScore) {
+        score = getScoreEmpate(tempScore, score);
+        score +="-";
+        tempScore = m_score2;
+        score = getScoreEmpate(tempScore, score);
+        return score;
     }
 
     private static String getScoreEmpate(int tempScore, String score) {
