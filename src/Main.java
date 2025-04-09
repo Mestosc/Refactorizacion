@@ -10,11 +10,11 @@ public class Main {
             return obtainDifference(m_score1, m_score2);
         }
         else {
-            return obtenerPuntuacionNoVentajaEmpate(m_score2, m_score1);
+            return obtenerPuntuacionSinVentajaSinEmpate(m_score2, m_score1);
         }
     }
 
-    private static String obtenerPuntuacionNoVentajaEmpate(int m_score2, int m_score1) {
+    private static String obtenerPuntuacionSinVentajaSinEmpate(int m_score2, int m_score1) {
         String score = "";
         score = getScoreEmpate(m_score1, score);
         score +="-";
