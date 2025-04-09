@@ -9,11 +9,7 @@ public class Main {
             return obtenerPuntuacionSiEmpate(m_score1);
         }
         else if (isAdvantage(m_score1, m_score2)) {
-            int pointDifferences = m_score1-m_score2;
-            if (pointDifferences==1)  return "Advantage player1";
-            else if (pointDifferences ==-1)  return "Advantage player2";
-            else if (pointDifferences>=2) return "Win for player1";
-            else return "Win for player2";
+            return obtainDifference(m_score1, m_score2);
         }
         else {
             for (int i=1; i<3; i++) {
@@ -38,6 +34,14 @@ public class Main {
 
         }
     return score;
+    }
+
+    private static String obtainDifference(int m_score1, int m_score2) {
+        int pointDifference = m_score1 - m_score2;
+        if (pointDifference==1) return "Advantage player1";
+        else if (pointDifference ==-1) return "Advantage player2";
+        else if (pointDifference>=2) return "Win for player1";
+        else return "Win for player2";
     }
 
     private static String obtenerPuntuacionSiEmpate(int m_score1) {
