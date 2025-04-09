@@ -289,4 +289,8 @@ Podemos seleccionar diferentes elementos para mostrar su menú de refactorizaci�
 
 # Cambios realizados
 Los cambios realizados son extraer funciones getScoreEmpate estanEmpatados, obtainDifferences, isAdvantage.
-Tambien elimino un bucle for que no es necesario y agrupo en metodos diversas funcionalidades, además añado 
+Tambien elimino un bucle for que no es necesario y agrupo en metodos diversas funcionalidades, además elimino las variables tempScore y score
+del metodo getScore, eliminacion de concatenaciones de variables y cambiando eso con funciones y demás devolviendo valores de forma directa cuando es posible
+
+Hecho por humanos esta refactorizacion fue hecha por mi usando solo las herramientas del IDE, explicarlo me da bastante pereza pero en esencia extraje metodos para funcionalidades que podrian 
+ser usadas
