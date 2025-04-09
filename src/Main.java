@@ -16,9 +16,8 @@ public class Main {
             score+="-";
             tempScore = m_score2;
             score = getScoreEmpate(tempScore, score);
-
+            return score;
         }
-    return score;
     }
 
     private static String getScoreEmpate(int tempScore, String score) {
