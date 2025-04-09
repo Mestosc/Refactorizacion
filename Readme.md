@@ -290,7 +290,26 @@ Podemos seleccionar diferentes elementos para mostrar su menú de refactorizaci�
 # Cambios realizados
 Los cambios realizados son extraer funciones getScoreEmpate estanEmpatados, obtainDifferences, isAdvantage.
 Tambien elimino un bucle for que no es necesario y agrupo en metodos diversas funcionalidades, además elimino las variables tempScore y score
-del metodo getScore, eliminacion de concatenaciones de variables y cambiando eso con funciones y demás devolviendo valores de forma directa cuando es posible
+del metodo getScore, eliminacion de concatenaciones de variables y cambiando eso con funciones y demás devolviendo valores de forma directa cuando es posible, haciendo retornos en casos donde es posible
+y no usando algunas variables en segun que sitios que pues no lo requieren, francamente creo que el codigo se explica mejor que yo.
+
+Esto es un ejemplo el metodo getScore ha acabado asi despues de todos los cambios:
+```java
+public static String getScore(int m_score1, int m_score2) {
+    if (estanEmpatados(m_score1, m_score2)) {
+            return obtenerPuntuacionSiEmpate(m_score1);
+        }
+        else if (isAdvantage(m_score1, m_score2)) {
+            return obtainDifference(m_score1, m_score2);
+        }
+        else {
+            return obtenerPuntuacionNoVentajaEmpate(m_score2, m_score1);
+        }
+}
+```
+Como se puede ver las funciones a las que se llaman implementan la logica para obtener las puntuaciones en determinadas situaciones
+o para saber situaciones que pueden ocurren en los partidos, cosa que tambien ha llevado a la eliminacion de las variables score y tempScore han sido eliminadas de este metodo por no ser necesarias
+no se si lo he explicado pero tambien quite algun bucle innecesario, y otras cosas diversas
 
 Hecho por humanos esta refactorizacion fue hecha por mi usando solo las herramientas del IDE, explicarlo me da bastante pereza pero en esencia extraje metodos para funcionalidades que podrian 
 ser usadas
