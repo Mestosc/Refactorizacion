@@ -3,7 +3,6 @@ public class Main {
      * metodo para devolver la puntuacion de tenis
      */
     public static String getScore(int m_score1, int m_score2) {
-        String score = "";
         if (estanEmpatados(m_score1, m_score2)) {
             return obtenerPuntuacionSiEmpate(m_score1);
         }
@@ -11,20 +10,21 @@ public class Main {
             return obtainDifference(m_score1, m_score2);
         }
         else {
-            return obtenerPuntuacionNoVentajaEmpate(m_score2, score, m_score1);
+            return obtenerPuntuacionNoVentajaEmpate(m_score2, m_score1);
         }
     }
 
-    private static String obtenerPuntuacionNoVentajaEmpate(int m_score2, String score, int tempScore) {
-        score = getScoreEmpate(tempScore, score);
+    private static String obtenerPuntuacionNoVentajaEmpate(int m_score2, int m_score1) {
+        String score = "";
+        score = getScoreEmpate(m_score1, score);
         score +="-";
-        tempScore = m_score2;
-        score = getScoreEmpate(tempScore, score);
+        m_score1 = m_score2;
+        score = getScoreEmpate(m_score1, score);
         return score;
     }
 
-    private static String getScoreEmpate(int tempScore, String score) {
-        switch(tempScore) {
+    private static String getScoreEmpate(int m_score1, String score) {
+        switch(m_score1) {
             case 0:
                 score +="Love";
                 break;
