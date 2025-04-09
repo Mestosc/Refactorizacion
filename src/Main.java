@@ -10,20 +10,15 @@ public class Main {
             switch (m_score1)
             {
                 case 0:
-                    score = "Love-All";
-                    break;
+                    return "Love-All";
                 case 1:
-                    score = "Fifteen-All";
-                    break;
+                    return "Fifteen-All";
                 case 2:
-                    score = "Thirty-All";
-                    break;
+                   return "Thirty-All";
                 case 3:
-                    score = "Forty-All";
-                    break;
+                    return "Forty-All";
                 default:
-                    score = "Deuce";
-                    break;
+                    return "Deuce";
 
             }
         }
