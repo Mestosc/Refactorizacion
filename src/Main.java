@@ -5,7 +5,7 @@ public class Main {
     public static String getScore(int m_score1, int m_score2) {
         String score = "";
         int tempScore=m_score1;
-        if (m_score1 == m_score2) {
+        if (estanEmpatados(m_score1, m_score2)) {
             return obtenerPuntuacionSiEmpate(m_score1);
         }
         else if (isAdvantage(m_score1, m_score2)) {
@@ -34,6 +34,10 @@ public class Main {
 
         }
     return score;
+    }
+
+    private static boolean estanEmpatados(int m_score1, int m_score2) {
+        return m_score1 == m_score2;
     }
 
     private static String obtainDifference(int m_score1, int m_score2) {
